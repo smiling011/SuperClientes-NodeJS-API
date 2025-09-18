@@ -1,6 +1,6 @@
 const Cliente = require("../models/models");
 
-// Obtener todos los clientes
+// Para ver todos los clientes
 exports.getClientes = async (req, res) => {
   try {
     const clientes = await Cliente.findAll();
@@ -10,7 +10,7 @@ exports.getClientes = async (req, res) => {
   }
 };
 
-// Obtener cliente por ID
+// PAra ver los  cliente por id
 exports.getClienteById = async (req, res) => {
   try {
     const cliente = await Cliente.findByPk(req.params.id);
@@ -20,6 +20,8 @@ exports.getClienteById = async (req, res) => {
     res.status(500).json({ message: "Error al obtener cliente", error });
   }
 };
+
+//CRUD
 
 // Crear cliente
 exports.createCliente = async (req, res) => {
